@@ -1,14 +1,17 @@
 ﻿"use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, AnimatePresence } from "framer-motion";
 import {
   Route,
   ShieldCheck,
   UserCheck,
   DollarSign,
   Headphones,
+  Menu,
+  X,
 } from "lucide-react";
 
 // --- TEXT CONTENT ---
@@ -67,11 +70,14 @@ const itemVariants: Variants = {
 };
 
 export default function HomePage() {
+  // Mobile menu state
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen w-full bg-gray-50 text-gray-900 font-sans">
       
       {/* 1. HERO PARALLAX SECTION */}
-      <section className="relative w-full h-screen bg-[url('/header.jpeg')] bg-contain bg-center bg-no-repeat bg-fixed">
+      <section className="relative w-full h-screen bg-[url('/1.jpeg')] md:bg-[url('/header.jpeg')] bg-cover bg-center bg-no-repeat bg-fixed">
         
         {/* Floating Top Navigation */}
         <div className="absolute top-0 left-0 w-full p-4 md:p-8 z-50">
@@ -79,27 +85,72 @@ export default function HomePage() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex justify-between items-center rounded-3xl bg-white/85 backdrop-blur-md border border-orange-100 px-6 py-4 shadow-md max-w-[1600px] mx-auto"
+            className="relative flex justify-between items-center rounded-3xl bg-white/85 backdrop-blur-md border border-orange-100 px-6 py-4 shadow-md max-w-[1600px] mx-auto z-50"
           >
             <div className="flex items-center gap-4">
               {/* LOGO */}
-              <div className="relative h-12 w-32 overflow-hidden rounded-lg bg-white shadow-sm border border-orange-50">
+              <div className="relative h-10 w-28 md:h-12 md:w-32 overflow-hidden rounded-lg bg-white shadow-sm border border-orange-50">
                 <Image src="/logo.png" alt="Brand Logo" fill className="object-contain p-1" />
               </div>
             </div>
 
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex gap-8 font-bold text-gray-700">
               <Link href="#about" className="hover:text-[#FF8C00] transition">About</Link>
               <Link href="/privacy" className="hover:text-[#FF8C00] transition">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-[#FF8C00] transition">Terms of Service</Link>
             </nav>
 
-            <div className="flex items-center">
-              <div className="relative h-12 w-12 overflow-hidden rounded-xl shadow-sm border border-orange-100 bg-white">
+            <div className="flex items-center gap-4">
+              <div className="relative h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-xl shadow-sm border border-orange-100 bg-white">
                 <Image src="/launcher.png" alt="S-UPER App" fill className="object-cover" />
               </div>
+              
+              {/* Mobile Menu Toggle Button */}
+              <button 
+                className="md:hidden flex items-center justify-center p-2 text-gray-700 hover:text-[#FF8C00] transition-colors"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle Menu"
+              >
+                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
             </div>
           </motion.header>
+
+          {/* Mobile Dropdown Menu */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className="absolute top-[88px] left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-orange-100 p-6 flex flex-col gap-6 md:hidden z-40"
+              >
+                <Link 
+                  href="#about" 
+                  onClick={() => setIsMenuOpen(false)} 
+                  className="text-lg font-bold text-gray-800 hover:text-[#FF8C00] transition"
+                >
+                  About
+                </Link>
+                <Link 
+                  href="/privacy" 
+                  onClick={() => setIsMenuOpen(false)} 
+                  className="text-lg font-bold text-gray-800 hover:text-[#FF8C00] transition"
+                >
+                  Privacy Policy
+                </Link>
+                <Link 
+                  href="/terms" 
+                  onClick={() => setIsMenuOpen(false)} 
+                  className="text-lg font-bold text-gray-800 hover:text-[#FF8C00] transition"
+                >
+                  Terms of Service
+                </Link>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Fades the bottom of the image nicely into the white content area */}
@@ -186,7 +237,7 @@ export default function HomePage() {
 
           <hr className="border-orange-100 my-4" />
 
-          {/* NEW SECTION: 4 Image Grid (4.jpeg - 7.jpeg) */}
+          {/* GALLERY SECTION: 4 Image Grid (4.jpeg - 7.jpeg) */}
           <motion.div variants={itemVariants} className="flex flex-col gap-8 my-4">
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-3xl font-black text-gray-900 mb-3">{aboutContent.galleryTitle}</h2>
