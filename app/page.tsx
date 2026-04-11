@@ -52,7 +52,7 @@ export default function HomePage() {
           >
             <div className="flex items-center gap-4">
               <div className="relative h-10 w-28 md:h-12 md:w-32 overflow-hidden rounded-lg bg-white shadow-sm border border-orange-50">
-                <Image src="/logo.png" alt="Super Logo" fill className="object-contain p-1" />
+                <Image src="/logo.png" alt="S-UPER Logo" fill className="object-contain p-1" />
               </div>
             </div>
 
@@ -71,7 +71,7 @@ export default function HomePage() {
 
             <div className="flex items-center gap-4">
               <div className="relative h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-xl shadow-sm border border-orange-100 bg-white">
-                <Image src="/launcher.png" alt="Super App" fill className="object-cover" />
+                <Image src="/launcher.png" alt="S-UPER App" fill className="object-cover" />
               </div>
               
               {/* Mobile Menu Toggle */}
@@ -133,7 +133,7 @@ export default function HomePage() {
 
               <div className="flex items-center gap-4">
                  <div className="relative h-16 w-16 overflow-hidden rounded-2xl bg-white border border-orange-100 shadow-sm p-1">
-                   <Image src="/launcher.png" alt="App Logo" fill className="object-cover rounded-xl" />
+                   <Image src="/launcher.png" alt="S-UPER App Logo" fill className="object-cover rounded-xl" />
                  </div>
                  <div>
                    <p className="text-xs uppercase tracking-[0.2em] text-[#FF8C00] font-bold">{t.premiumBrand}</p>
@@ -182,10 +182,10 @@ export default function HomePage() {
                 </div>
 
                 <div className="relative rounded-3xl p-8 text-white shadow-lg overflow-hidden min-h-[220px] flex flex-col justify-end border border-orange-200">
-                  <Image src="/2.jpeg" alt="Experience" fill className="object-cover" />
+                  <Image src="/2.jpeg" alt="S-UPER Experience" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#FF8C00]/95 via-[#FF8C00]/60 to-transparent"></div>
                   <div className="relative z-10">
-                    <p className="text-xs uppercase tracking-widest text-orange-100 font-bold drop-shadow-md">Super</p>
+                    <p className="text-xs uppercase tracking-widest text-orange-100 font-bold drop-shadow-md">S-UPER</p>
                     <p className="text-2xl font-black drop-shadow-md mb-2 text-white">{t.mainTitle}</p>
                     <p className="text-sm leading-relaxed text-white/90 font-medium">
                       {t.experienceDesc}

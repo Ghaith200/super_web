@@ -15,13 +15,13 @@ const translations = {
     section_about: "ABOUT",
     aboutUsTitle: "About Us",
     
-    // 🔴 ADDED EXPLICIT APP PURPOSE FOR GOOGLE VERIFICATION
-    appPurposeLabel: "App Purpose",
-    appPurpose: "Super is a ride-sharing application designed to connect passengers with verified professional drivers for secure, on-demand transportation services.",
+    // 🔴 EXPLICIT APP PURPOSE FOR GOOGLE VERIFICATION
+    appPurposeLabel: "Application Purpose",
+    appPurpose: "S-UPER is a ride-sharing mobile and web application. Its primary purpose is to allow users to book rides, track drivers in real-time, and process secure payments for transportation services.",
     
-    aboutIntro: "At Super, we are committed to providing high-quality ride-sharing services to ensure that our users receive the best transportation in the security and comfort of their journeys.",
+    aboutIntro: "At S-UPER, we are committed to providing high-quality ride-sharing services to ensure that our users receive the best transportation in the security and comfort of their journeys.",
     premiumBrand: "Premium Brand",
-    mainTitle: "Super Secure Drive",
+    mainTitle: "S-UPER Secure Drive",
     aboutOurVision: "Vision",
     aboutVisionText: "To transform the ride-sharing industry by offering comprehensive, user-centered services.",
     aboutOurMission: "Mission",
@@ -30,7 +30,7 @@ const translations = {
     smartRouting: "Smart routing & easy booking",
     experienceDesc: "Experience the new standard for premium transportation with strong safety.",
     
-    galleryTitle: "The Super Experience",
+    galleryTitle: "The S-UPER Experience",
     galleryDesc: "Discover how we make every journey effortless, from the moment you book until you reach your destination.",
     galleryItems: [
       { id: 4, title: "Effortless Booking", desc: "One tap to ride" },
@@ -49,7 +49,7 @@ const translations = {
     aboutPricingDesc: "Transparent fare estimates and flexible payments.",
     aboutSupportTitle: "24/7 Support",
     aboutSupportDesc: "Dedicated service to assist with any queries.",
-    aboutFooter: "© 2026 Super. All rights reserved.",
+    aboutFooter: "© 2026 S-UPER. All rights reserved.",
 
     // Legal Pages
     effectiveDate: "Effective Date: April 2026",
@@ -58,7 +58,7 @@ const translations = {
     termsTitle2: "2. User Conduct",
     termsDesc2: "You agree to use the platform respectfully and safely. Any fraudulent requests, harassment of drivers or passengers, or misuse of the rating system will result in immediate account termination.",
     termsTitle3: "3. Liability",
-    termsDesc3: "Super serves purely as a technological platform to connect independent users and drivers. While we enforce strict community guidelines, Super is not legally liable for individual conduct, lost items, or incidents occurring during transit.",
+    termsDesc3: "S-UPER serves purely as a technological platform to connect independent users and drivers. While we enforce strict community guidelines, S-UPER is not legally liable for individual conduct, lost items, or incidents occurring during transit.",
     
     privacyTitle1: "1. Data Collection",
     privacyDesc1: "We collect your phone number strictly for authentication purposes via Firebase. Your profile information, such as your name and avatar, is used exclusively to facilitate a premium experience within the platform.",
@@ -78,13 +78,13 @@ const translations = {
     section_about: "حول",
     aboutUsTitle: "من نحن",
     
-    // 🔴 ADDED EXPLICIT APP PURPOSE FOR GOOGLE VERIFICATION
-    appPurposeLabel: "الهدف من التطبيق",
-    appPurpose: "سوبر هو تطبيق للنقل التشاركي يهدف إلى ربط الركاب بسائقين محترفين ومعتمدين لتقديم خدمات نقل آمنة ومريحة عند الطلب.",
+    // 🔴 EXPLICIT APP PURPOSE FOR GOOGLE VERIFICATION
+    appPurposeLabel: "الغرض من التطبيق",
+    appPurpose: "S-UPER هو تطبيق للهواتف المحمولة والويب لخدمات النقل التشاركي. غرضه الأساسي هو السماح للمستخدمين بحجز الرحلات، وتتبع السائقين في الوقت الفعلي، وإجراء مدفوعات آمنة لخدمات النقل.",
     
-    aboutIntro: "في سوبر، نحن ملتزمون بتقديم خدمات نقل تشاركي عالية الجودة لضمان حصول مستخدمينا على أفضل وسيلة نقل بأمان وراحة في رحلاتهم.",
+    aboutIntro: "في S-UPER، نحن ملتزمون بتقديم خدمات نقل تشاركي عالية الجودة لضمان حصول مستخدمينا على أفضل وسيلة نقل بأمان وراحة في رحلاتهم.",
     premiumBrand: "علامة تجارية مميزة",
-    mainTitle: "سوبر للقيادة الآمنة",
+    mainTitle: "S-UPER للقيادة الآمنة",
     aboutOurVision: "الرؤية",
     aboutVisionText: "إحداث تحول في صناعة النقل التشاركي من خلال تقديم خدمات شاملة تركز على المستخدم.",
     aboutOurMission: "المهمة",
@@ -93,7 +93,7 @@ const translations = {
     smartRouting: "توجيه ذكي وحجز سهل",
     experienceDesc: "جرب المعيار الجديد للنقل المميز مع أعلى مستويات الأمان.",
     
-    galleryTitle: "تجربة سوبر",
+    galleryTitle: "تجربة S-UPER",
     galleryDesc: "اكتشف كيف نجعل كل رحلة سلسة، من لحظة الحجز حتى وصولك إلى وجهتك.",
     galleryItems: [
       { id: 4, title: "حجز سلس", desc: "نقرة واحدة للانطلاق" },
@@ -112,7 +112,7 @@ const translations = {
     aboutPricingDesc: "تقديرات شفافة للأسعار ومدفوعات مرنة.",
     aboutSupportTitle: "دعم على مدار الساعة",
     aboutSupportDesc: "خدمة مخصصة للمساعدة في أي استفسارات.",
-    aboutFooter: "© 2026 سوبر. جميع الحقوق محفوظة.",
+    aboutFooter: "© 2026 S-UPER. جميع الحقوق محفوظة.",
 
     // Legal Pages
     effectiveDate: "تاريخ السريان: أبريل 2026",
@@ -121,7 +121,7 @@ const translations = {
     termsTitle2: "2. سلوك المستخدم",
     termsDesc2: "أنت توافق على استخدام المنصة باحترام وأمان. أي طلبات احتيالية، أو مضايقة للسائقين أو الركاب، أو إساءة استخدام نظام التقييم سيؤدي إلى إنهاء الحساب فوراً.",
     termsTitle3: "3. المسؤولية",
-    termsDesc3: "يعمل تطبيق سوبر كمنصة تكنولوجية لربط المستخدمين والسائقين المستقلين. رغم تطبيقنا إرشادات صارمة، فإن سوبر غير مسؤولة قانونياً عن السلوك الفردي، أو العناصر المفقودة، أو الحوادث أثناء الرحلة.",
+    termsDesc3: "يعمل تطبيق S-UPER كمنصة تكنولوجية لربط المستخدمين والسائقين المستقلين. رغم تطبيقنا إرشادات صارمة، فإن S-UPER غير مسؤولة قانونياً عن السلوك الفردي، أو العناصر المفقودة، أو الحوادث أثناء الرحلة.",
     
     privacyTitle1: "1. جمع البيانات",
     privacyDesc1: "نحن نجمع رقم هاتفك بدقة لأغراض المصادقة. تُستخدم معلومات ملفك الشخصي حصرياً لتسهيل تجربة مميزة داخل المنصة.",
