@@ -3,11 +3,11 @@ import "./globals.css"; // Keep your existing CSS import
 import { LanguageProvider } from "./LanguageContext"; // <-- Import the provider
 
 export const metadata: Metadata = {
-  title: "S-UPER | Secure Drive",
-  description: "Premium ride-sharing services for your comfort and security.",
+  title: "S-UPER", // Must be exactly this. No extra words!
+  description: "S-UPER is a premium ride-sharing mobile and web application. Its exact purpose is to enable users to request rides, track verified drivers in real-time, and process secure payments.",
 };
 
-export default function RootLayout({
+export default function RootLayout  ({
   children,
 }: {
   children: React.ReactNode;
