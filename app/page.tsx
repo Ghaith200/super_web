@@ -84,13 +84,13 @@ export default function HomePage() {
 
     <div className="relative min-h-screen w-full bg-gray-50 text-gray-900 font-sans selection:bg-orange-100">
 
-     
+
 
       {/* 1. HERO PARALLAX SECTION */}
 
       <section className="relative w-full h-[100dvh] bg-[url('/1.jpeg')] md:bg-[url('/header.jpeg')] bg-cover bg-center bg-no-repeat md:bg-fixed">
 
-       
+
 
         {/* Sticky Nav Wrapper */}
 
@@ -127,8 +127,9 @@ export default function HomePage() {
               <Link href="/privacy" className="hover:text-[#FF8C00] transition-colors duration-200">{t.navPrivacy}</Link>
 
               <Link href="/terms" className="hover:text-[#FF8C00] transition-colors duration-200">{t.navTerms}</Link>
+              <Link href="/contact-us" className="hover:text-[#FF8C00] transition-colors duration-200">{t.navContact}</Link>
 
-             
+
 
               <button onClick={toggleLanguage} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-orange-50 text-gray-800 hover:text-[#FF8C00] transition-colors duration-200">
 
@@ -150,7 +151,7 @@ export default function HomePage() {
 
               </div>
 
-             
+
 
               <button
 
@@ -196,7 +197,7 @@ export default function HomePage() {
 
                 <Link href="/terms" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-gray-800 hover:text-[#FF8C00] transition-colors">{t.navTerms}</Link>
 
-               
+
 
                 <hr className="border-gray-200" />
 
@@ -240,7 +241,7 @@ export default function HomePage() {
 
           <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr] items-center">
 
-           
+
 
             <motion.div variants={itemVariants} className="flex flex-col gap-6">
 
@@ -266,23 +267,23 @@ export default function HomePage() {
 
               <div className="flex items-center gap-4">
 
-                 <div className="relative h-16 w-16 overflow-hidden rounded-2xl bg-white border border-[#FF8C00]/20 shadow-md shadow-[#FF8C00]/30 p-1">
+                <div className="relative h-16 w-16 overflow-hidden rounded-2xl bg-white border border-[#FF8C00]/20 shadow-md shadow-[#FF8C00]/30 p-1">
 
-                   <Image src="/launcher.png" alt="App Logo" fill className="object-cover rounded-xl" />
+                  <Image src="/launcher.png" alt="App Logo" fill className="object-cover rounded-xl" />
 
-                 </div>
+                </div>
 
-                 <div>
+                <div>
 
-                   <p className="text-xs uppercase tracking-[0.2em] text-[#FF8C00] font-bold">{t.premiumBrand}</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#FF8C00] font-bold">{t.premiumBrand}</p>
 
-                   <h1 className="text-3xl md:text-5xl font-black tracking-tight text-gray-900">
+                  <h1 className="text-3xl md:text-5xl font-black tracking-tight text-gray-900">
 
-                     {t.mainTitle}
+                    {t.mainTitle}
 
-                   </h1>
+                  </h1>
 
-                 </div>
+                </div>
 
               </div>
 
@@ -322,47 +323,47 @@ export default function HomePage() {
 
             <motion.div variants={itemVariants} className="flex flex-col gap-6">
 
-                <div className="flex items-center gap-4 rounded-3xl bg-gray-50 border border-[#FF8C00]/10 p-4 shadow-sm shadow-[#FF8C00]/10">
+              <div className="flex items-center gap-4 rounded-3xl bg-gray-50 border border-[#FF8C00]/10 p-4 shadow-sm shadow-[#FF8C00]/10">
 
-                  <div className="flex h-12 w-12 items-center justify-center shrink-0 rounded-2xl bg-[#FF8C00] text-white shadow-lg shadow-[#FF8C00]/50">
+                <div className="flex h-12 w-12 items-center justify-center shrink-0 rounded-2xl bg-[#FF8C00] text-white shadow-lg shadow-[#FF8C00]/50">
 
-                    <Route className="h-6 w-6" strokeWidth={2.5} />
-
-                  </div>
-
-                  <div>
-
-                    <p className="text-sm font-bold text-gray-900">{t.secureRide}</p>
-
-                    <p className="text-sm text-gray-600 font-medium">{t.smartRouting}</p>
-
-                  </div>
+                  <Route className="h-6 w-6" strokeWidth={2.5} />
 
                 </div>
 
+                <div>
 
+                  <p className="text-sm font-bold text-gray-900">{t.secureRide}</p>
 
-                <div className="group relative rounded-3xl p-8 text-white shadow-xl shadow-[#FF8C00]/50 overflow-hidden min-h-[220px] flex flex-col justify-end border border-[#FF8C00]/30">
-
-                  <Image src="/2.jpeg" alt="Experience" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#FF8C00]/95 via-[#FF8C00]/60 to-transparent transition-opacity group-hover:opacity-90"></div>
-
-                  <div className="relative z-10">
-
-                    <p className="text-xs uppercase tracking-widest text-orange-100 font-bold drop-shadow-md">S-UPER</p>
-
-                    <p className="text-2xl font-black drop-shadow-md mb-2 text-white">{t.mainTitle}</p>
-
-                    <p className="text-sm leading-relaxed text-white/90 font-medium">
-
-                      {t.experienceDesc}
-
-                    </p>
-
-                  </div>
+                  <p className="text-sm text-gray-600 font-medium">{t.smartRouting}</p>
 
                 </div>
+
+              </div>
+
+
+
+              <div className="group relative rounded-3xl p-8 text-white shadow-xl shadow-[#FF8C00]/50 overflow-hidden min-h-[220px] flex flex-col justify-end border border-[#FF8C00]/30">
+
+                <Image src="/2.jpeg" alt="Experience" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FF8C00]/95 via-[#FF8C00]/60 to-transparent transition-opacity group-hover:opacity-90"></div>
+
+                <div className="relative z-10">
+
+                  <p className="text-xs uppercase tracking-widest text-orange-100 font-bold drop-shadow-md">S-UPER</p>
+
+                  <p className="text-2xl font-black drop-shadow-md mb-2 text-white">{t.mainTitle}</p>
+
+                  <p className="text-sm leading-relaxed text-white/90 font-medium">
+
+                    {t.experienceDesc}
+
+                  </p>
+
+                </div>
+
+              </div>
 
             </motion.div>
 
@@ -386,7 +387,7 @@ export default function HomePage() {
 
             </div>
 
-           
+
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
