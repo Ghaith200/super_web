@@ -7,6 +7,7 @@ const translations = {
     navAbout: "About Us",
     navPrivacy: "Privacy Policy",
     navTerms: "Terms of Service",
+    navContact: "Contact Us",
     langSwitch: "العربية",
     effectiveDate: "Last updated on 23rd April, 2026",
 
@@ -123,6 +124,8 @@ const translations = {
     navAbout: "معلومات عنا",
     navPrivacy: "سياسة الخصوصية",
     navTerms: "شروط الخدمة",
+    navContact: "تواصل معانا",
+
     langSwitch: "English",
     effectiveDate: "آخر تحديث في 23 أبريل 2026",
 
