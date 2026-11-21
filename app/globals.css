@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+/* Global Styles */
 :root {
   color-scheme: light;
   --background: #fffdfa;
