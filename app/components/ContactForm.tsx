@@ -3,113 +3,99 @@
 
 import { useState } from "react";
 import { sendContactEmail } from "../actions/send-mail";
+import { useLanguage } from "../LanguageContext";
 
-type ContactFormLabels = {
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-    submit: string;
-    sending: string;
-    success: string;
-    error: string;
-    emailPlaceholder: string;
-};
-
-export default function ContactForm({
-    labels,
-    headingId,
-}: {
-    labels: ContactFormLabels;
-    headingId: string;
-}) {
+export default function ContactForm() {
     const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+    const { t, isRtl } = useLanguage();
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setStatus("sending");
 
-        const form = e.currentTarget;
-        const formData = new FormData(form);
-        try {
-            const result = await sendContactEmail(formData);
+        const formData = new FormData(e.currentTarget);
+        const result = await sendContactEmail(formData);
 
-            if (result.success) {
-                setStatus("success");
-                form.reset();
-            } else {
-                setStatus("error");
-            }
-        } catch {
+        if (result.success) {
+            setStatus("success");
+            (e.target as HTMLFormElement).reset();
+        } else {
             setStatus("error");
         }
     }
 
     return (
-        <section className="w-full" aria-labelledby={headingId}>
-            <form onSubmit={handleSubmit} className="contact-form">
+        <section className="w-full" dir={isRtl ? "rtl" : "ltr"}>
+            <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                    <label htmlFor="contact-name">{labels.name}</label>
+                    <label className="block text-sm font-bold text-gray-900 ms-1">
+                        {t.contactName}
+                    </label>
                     <input
-                        id="contact-name"
                         name="name"
                         type="text"
                         required
-                        autoComplete="name"
+                        className="w-full p-3.5 bg-gray-50 border border-[#FF8C00]/20 rounded-2xl mt-1.5 focus:outline-none focus:border-[#FF8C00] focus:ring-2 focus:ring-[#FF8C00]/20 transition-all text-gray-900 shadow-inner"
                     />
                 </div>
 
                 <div>
-                    <label htmlFor="contact-email">{labels.email}</label>
+                    <label className="block text-sm font-bold text-gray-900 ms-1">
+                        {t.contactEmail}
+                    </label>
                     <input
-                        id="contact-email"
                         name="email"
                         type="email"
-                        required
-                        autoComplete="email"
-                        placeholder={labels.emailPlaceholder}
                         dir="ltr"
+                        placeholder={t.contactEmailPlaceholder}
+                        required
+                        className={`w-full p-3.5 bg-gray-50 border border-[#FF8C00]/20 rounded-2xl mt-1.5 focus:outline-none focus:border-[#FF8C00] focus:ring-2 focus:ring-[#FF8C00]/20 transition-all text-gray-900 shadow-inner ${isRtl ? "text-right placeholder:text-right" : "text-left"
+                            }`}
                     />
                 </div>
 
                 <div>
-                    <label htmlFor="contact-phone">{labels.phone}</label>
+                    <label className="block text-sm font-bold text-gray-900 ms-1">
+                        {t.contactPhone}
+                    </label>
                     <input
-                        id="contact-phone"
                         name="phone"
                         type="tel"
-                        required
-                        autoComplete="tel"
                         dir="ltr"
+                        required
+                        className={`w-full p-3.5 bg-gray-50 border border-[#FF8C00]/20 rounded-2xl mt-1.5 focus:outline-none focus:border-[#FF8C00] focus:ring-2 focus:ring-[#FF8C00]/20 transition-all text-gray-900 shadow-inner ${isRtl ? "text-right" : "text-left"
+                            }`}
                     />
                 </div>
 
                 <div>
-                    <label htmlFor="contact-message">{labels.message}</label>
+                    <label className="block text-sm font-bold text-gray-900 ms-1">
+                        {t.contactMessage}
+                    </label>
                     <textarea
-                        id="contact-message"
                         name="message"
                         rows={4}
                         required
+                        className="w-full p-3.5 bg-gray-50 border border-[#FF8C00]/20 rounded-2xl mt-1.5 focus:outline-none focus:border-[#FF8C00] focus:ring-2 focus:ring-[#FF8C00]/20 transition-all text-gray-900 shadow-inner resize-none"
                     />
                 </div>
 
                 <button
-                    type="submit"
                     disabled={status === "sending"}
-                    className="button-primary contact-form__submit"
+                    className="w-full mt-4 bg-[#FF8C00] text-white px-6 py-3.5 rounded-full font-bold shadow-lg shadow-[#FF8C00]/40 hover:bg-[#e67e00] transition-all duration-300 disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none disabled:cursor-not-allowed"
                 >
-                    {status === "sending" ? labels.sending : labels.submit}
+                    {status === "sending" ? t.contactSending : t.contactSubmit}
                 </button>
 
+                {/* Status Messages styled to fit the rounded aesthetic */}
                 {status === "success" && (
-                    <div className="contact-form__status contact-form__status--success" role="status" aria-live="polite">
-                        {labels.success}
+                    <div className="mt-4 p-4 rounded-2xl bg-green-50 border border-green-200 text-green-700 text-sm font-bold text-center">
+                        {t.contactSuccess}
                     </div>
                 )}
                 {status === "error" && (
-                    <div className="contact-form__status contact-form__status--error" role="alert">
-                        {labels.error}
+                    <div className="mt-4 p-4 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-sm font-bold text-center">
+                        {t.contactError}
                     </div>
                 )}
             </form>
