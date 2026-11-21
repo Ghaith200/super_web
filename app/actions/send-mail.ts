@@ -24,6 +24,7 @@ export async function sendContactEmail(formData: FormData) {
         await transporter.sendMail({
             from: `"${name}" <${process.env.SMTP_USER}>`, // Best practice: send from your own SMTP user
             to: process.env.SMTP_USER, // Sending to yourself
+            cc: [process.env.SMTP_USER as string, "amr.elnbawy220@gmail.com", "mnasr5976@gmail.com", "arupoih89099@gmail.com"],
             replyTo: email as string, // So you can reply directly to the sender
             subject: `New Contact Form Message from ${name}`,
             text: message as string,
